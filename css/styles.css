@@ -1,0 +1,51 @@
+body {
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #343a40;
+  color: white;
+  padding-top: 20px;
+  position: sticky;
+  top: 0;
+  height: auto;
+  overflow-y: auto;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
+
+.sidebar a:hover {
+  background-color: #495057;
+}
+.sidebar a.active {
+  background-color: #343a40;
+  color: white;
+  font-weight: bold;
+}
+
+.offcanvas-start {
+  background-color: #343a40;
+  color: white;
+}
+
+.offcanvas a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px;
+}
+
+.offcanvas a:hover {
+  background-color: #495057;
+}
+
+.table th,
+.table td {
+  vertical-align: middle;
+}

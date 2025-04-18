@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Vehículos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar Mobile -->
+    <nav class="navbar navbar-dark bg-dark d-md-none">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <span class="navbar-brand mb-0 h1">Administrador</span>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar Desktop-->
+        <div
+          class="col-md-3 col-lg-2 d-none d-md-block bg-dark text-white sidebar p-0 d-flex flex-column"
+          style="height: 100vh">
+          <h4 class="text-center py-3 border-bottom">Administrador</h4>
+          <a
+            href="./admin_dashboard.html"
+            class="text-white py-2 px-3 d-flex align-items-center">
+            <i class="bi bi-speedometer2 me-2"></i>
+            Dashboard
+          </a>
+          <a
+            href="./admin_employees.html"
+            class="text-white py-2 px-3 d-flex align-items-center">
+            <i class="bi bi-person-badge-fill me-2"></i>
+            Empleados
+          </a>
+          <a
+            href="./admin_clients.html"
+            class="text-white py-2 px-3 d-flex align-items-center">
+            <i class="bi bi-people-fill me-2"></i>
+            Clientes
+          </a>
+          <a
+            href="./admin_vehicles.html"
+            class="text-white py-2 px-3 d-flex align-items-center active">
+            <i class="bi bi-truck-front-fill me-2"></i>
+            Vehículos
+          </a>
+
+          <a href="#" class="text-white py-2 px-3 d-flex align-items-center">
+            <i class="bi bi-box-arrow-right me-2"></i>
+            <span class="small">Cerrar Sesión</span>
+          </a>
+        </div>
+
+        <!-- Sidebar Mobile -->
+        <div
+          class="offcanvas offcanvas-start d-md-none"
+          tabindex="-1"
+          id="sidebarMenu"
+          aria-labelledby="sidebarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="sidebarLabel">Administrador</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <a
+              href="./admin_dashboard.html"
+              class="d-flex align-items-center mb-2 text-decoration-none text-white">
+              <i class="bi bi-speedometer2 me-2"></i>
+              Dashboard
+            </a>
+            <a
+              href="./admin_vehicles.html"
+              class="d-flex align-items-center mb-2 text-decoration-none text-white">
+              <i class="bi bi-truck-front-fill me-2"></i>
+              Vehículos
+            </a>
+            <a
+              href="./admin_clients.html"
+              class="d-flex align-items-center mb-2 text-decoration-none text-white">
+              <i class="bi bi-people-fill me-2"></i>
+              Clientes
+            </a>
+            <a
+              href="./admin_employees.html"
+              class="d-flex align-items-center mb-2 text-decoration-none text-white">
+              <i class="bi bi-person-badge-fill me-2"></i>
+              Empleados
+            </a>
+
+            <a
+              href="#"
+              class="text-white py-2 px-3 d-flex align-items-center mt-2">
+              <i class="bi bi-box-arrow-right me-2"></i>
+              <span class="small">Cerrar Sesión</span>
+            </a>
+          </div>
+        </div>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+          <div class="row align-items-center mb-4" style="min-height: 170px">
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+              <div>
+                <h2 class="mb-2">Panel Vehículos</h2>
+                <p class="mb-3">Bienvenido Administrador Diego</p>
+                <button
+                  type="button"
+                  class="btn btn-success"
+                  data-bs-toggle="modal"
+                  data-bs-target="#createVehicleModal">
+                  <i class="bi bi-plus-circle me-2"></i> Crear Vehículo
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-6 mt-3">
+              <div class="row g-2">
+                <div class="col-6">
+                  <div
+                    class="card text-white bg-success shadow-sm rounded-4 border-0 text-center"
+                    style="height: 150px; width: 100%">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center align-items-center gap-2">
+                      <i class="bi bi-car-front-fill fs-4"></i>
+                      <h6
+                        class="mb-0 small text-truncate"
+                        style="max-width: 100%">
+                        Vehículos a la Venta
+                      </h6>
+                      <h5 class="fw-bold mb-0">120</h5>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div
+                    class="card text-white bg-danger shadow-sm rounded-4 border-0 text-center"
+                    style="height: 150px; width: 100%">
+                    <div
+                      class="card-body d-flex flex-column justify-content-center align-items-center gap-2">
+                      <i class="bi bi-tools fs-4"></i>
+                      <h6
+                        class="mb-0 small text-truncate"
+                        style="max-width: 100%">
+                        En Mantenimiento
+                      </h6>
+                      <h5 class="fw-bold mb-0">18</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="mt-4">Lista de Vehículos</h4>
+          <div class="table-responsive">
+            <table class="table table-striped table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Patente</th>
+                  <th>Stock</th>
+                  <th>Precio</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Tipo</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>001</td>
+                  <td>ABC123</td>
+                  <td>5</td>
+                  <td>$25,000</td>
+                  <td>Ford</td>
+                  <td>Focus</td>
+                  <td>SUV</td>
+                  <td>Listo</td>
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <button class="btn btn-primary btn-sm" style="width: 48%">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button class="btn btn-danger btn-sm" style="width: 48%">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>002</td>
+                  <td>XYZ789</td>
+                  <td>2</td>
+                  <td>$30,000</td>
+                  <td>Toyota</td>
+                  <td>Corolla</td>
+                  <td>Sedan</td>
+                  <td>En proceso</td>
+                  <td>
+                    <div class="d-flex justify-content-between">
+                      <button class="btn btn-primary btn-sm" style="width: 48%">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button class="btn btn-danger btn-sm" style="width: 48%">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="createVehicleModal"
+      tabindex="-1"
+      aria-labelledby="createVehicleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createVehicleModalLabel">
+              Crear Vehículo
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="vehiclePatente" class="form-label">Patente</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="vehiclePatente"
+                    required />
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleStock" class="form-label">Stock</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="vehicleStock"
+                    required />
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehiclePrice" class="form-label">Precio</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="vehiclePrice"
+                    required />
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleMarca" class="form-label">Marca</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="vehicleMarca"
+                    required />
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleModelo" class="form-label">Modelo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="vehicleModelo"
+                    required />
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleTipo" class="form-label">Tipo</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="vehicleTipo"
+                    required />
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleEstado" class="form-label">Estado</label>
+                  <select class="form-select" id="vehicleEstado" required>
+                    <option value="" disabled selected>
+                      Seleccione un estado
+                    </option>
+                    <option value="Listo">En Venta</option>
+                    <option value="En proceso">En proceso</option>
+                    <option value="Listo">Listo</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Guardar Vehículo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
