@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard Empleados</title>
+    <title>Dashboard Clientes</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet" />
@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../../../css/styles.css" />
   </head>
   <body>
-    <!-- Navbar para móviles -->
+    <!-- Navbar mobile -->
     <nav class="navbar navbar-dark bg-dark d-md-none">
       <div class="container-fluid">
         <button
@@ -30,7 +30,7 @@
 
     <div class="container-fluid">
       <div class="row">
-        <!-- Sidebar para pantallas grandes -->
+        <!-- Sidebar Desktop -->
         <div
           class="col-md-3 col-lg-2 d-none d-md-block bg-dark text-white sidebar p-0 d-flex flex-column"
           style="height: 100vh">
@@ -43,13 +43,13 @@
           </a>
           <a
             href="./admin_employees.html"
-            class="text-white py-2 px-3 d-flex align-items-center active">
+            class="text-white py-2 px-3 d-flex align-items-center">
             <i class="bi bi-person-badge-fill me-2"></i>
             Empleados
           </a>
           <a
             href="./admin_clients.html"
-            class="text-white py-2 px-3 d-flex align-items-center">
+            class="text-white py-2 px-3 d-flex align-items-center active">
             <i class="bi bi-people-fill me-2"></i>
             Clientes
           </a>
@@ -66,7 +66,7 @@
           </a>
         </div>
 
-        <!-- Sidebar para móviles (Offcanvas) -->
+        <!-- Sidebar mobile -->
         <div
           class="offcanvas offcanvas-start d-md-none"
           tabindex="-1"
@@ -105,6 +105,7 @@
               <i class="bi bi-person-badge-fill me-2"></i>
               Empleados
             </a>
+
             <a
               href="#"
               class="text-white py-2 px-3 d-flex align-items-center mt-2">
@@ -114,146 +115,43 @@
           </div>
         </div>
 
-        <!-- Contenido principal -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
-          <h2>Panel Empleados</h2>
+          <h2>Panel Clientes</h2>
           <p>Bienvenido Administrador Diego</p>
 
           <button
             type="button"
             class="btn btn-success mb-3"
             data-bs-toggle="modal"
-            data-bs-target="#createEmployeeModal">
-            <i class="bi bi-person-plus me-2"></i> Crear Empleado
+            data-bs-target="#createClientModal">
+            <i class="bi bi-person-plus me-2"></i> Crear Cliente
           </button>
 
-          <h4 class="mt-4">Lista de Empleados</h4>
+          <h4 class="mt-4">Lista de Clientes</h4>
           <div class="table-responsive">
             <table class="table table-striped table-bordered">
               <thead class="table-dark">
                 <tr>
                   <th>ID</th>
-                  <th>Usuario</th>
-                  <th>Password</th>
                   <th>Nombre</th>
                   <th>Apellido</th>
                   <th>DNI</th>
                   <th>Email</th>
-                  <th>Rol</th>
+                  <th>¿Posee Auto?</th>
+                  <th>Patente</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
+
               <tbody>
-                <!-- Usuario 1 -->
                 <tr>
                   <td>01</td>
-                  <td>Juan1234</td>
-                  <td>*******</td>
                   <td>Juan</td>
                   <td>Pérez</td>
                   <td>12345678</td>
                   <td>juan@example.com</td>
-                  <td>Administrador</td>
-                  <td>
-                    <div class="d-flex justify-content-between">
-                      <button
-                        class="btn btn-primary btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-pencil"></i>
-                      </button>
-                      <button
-                        class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-trash"></i>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- Usuario 2 -->
-                <tr>
-                  <td>02</td>
-                  <td>Maria1234</td>
-                  <td>*******</td>
-                  <td>Maria</td>
-                  <td>García</td>
-                  <td>87654321</td>
-                  <td>maria@example.com</td>
-                  <td>Administrador</td>
-                  <td>
-                    <div class="d-flex justify-content-between">
-                      <button
-                        class="btn btn-primary btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-pencil"></i>
-                      </button>
-                      <button
-                        class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-trash"></i>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- Usuario 3 -->
-                <tr>
-                  <td>03</td>
-                  <td>Pedro1234</td>
-                  <td>*******</td>
-                  <td>Pedro</td>
-                  <td>Ramírez</td>
-                  <td>23456789</td>
-                  <td>pedro@example.com</td>
-                  <td>Empleado</td>
-                  <td>
-                    <div class="d-flex justify-content-between">
-                      <button
-                        class="btn btn-primary btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-pencil"></i>
-                      </button>
-                      <button
-                        class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-trash"></i>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- Usuario 4 -->
-                <tr>
-                  <td>04</td>
-                  <td>Laura1234</td>
-                  <td>*******</td>
-                  <td>Laura</td>
-                  <td>Martínez</td>
-                  <td>34567890</td>
-                  <td>laura@example.com</td>
-                  <td>Empleado</td>
-                  <td>
-                    <div class="d-flex justify-content-between">
-                      <button
-                        class="btn btn-primary btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-pencil"></i>
-                      </button>
-                      <button
-                        class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-trash"></i>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- Usuario 5 -->
-                <tr>
-                  <td>05</td>
-                  <td>Carlos1234</td>
-                  <td>*******</td>
-                  <td>Carlos</td>
-                  <td>Sánchez</td>
-                  <td>45678901</td>
-                  <td>carlos@example.com</td>
-                  <td>Empleado</td>
+                  <td>Si</td>
+                  <td>ABC123</td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <button
@@ -270,16 +168,14 @@
                   </td>
                 </tr>
 
-                <!-- Usuario 10 -->
                 <tr>
-                  <td>06</td>
-                  <td>Patricia1234</td>
-                  <td>*******</td>
-                  <td>Patricia</td>
-                  <td>Jiménez</td>
-                  <td>90123456</td>
-                  <td>patricia@example.com</td>
-                  <td>Empleado</td>
+                  <td>02</td>
+                  <td>Maria</td>
+                  <td>García</td>
+                  <td>87654321</td>
+                  <td>maria@example.com</td>
+                  <td>No</td>
+                  <td>-</td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <button
@@ -304,15 +200,15 @@
 
     <div
       class="modal fade"
-      id="createEmployeeModal"
+      id="createClientModal"
       tabindex="-1"
-      aria-labelledby="createEmployeeModalLabel"
+      aria-labelledby="createClientModalLabel"
       aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="createEmployeeModalLabel">
-              Crear Empleado
+            <h5 class="modal-title" id="createClientModalLabel">
+              Crear Cliente
             </h5>
             <button
               type="button"
@@ -324,67 +220,64 @@
             <form>
               <div class="row">
                 <div class="mb-3 col-md-6">
-                  <label for="employeeUsername" class="form-label"
-                    >Usuario</label
-                  >
+                  <label for="clientName" class="form-label">Nombre</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="employeeUsername"
+                    id="clientName"
                     required />
                 </div>
                 <div class="mb-3 col-md-6">
-                  <label for="employeePassword" class="form-label"
-                    >Contraseña</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="employeePassword"
-                    required />
-                </div>
-                <div class="mb-3 col-md-6">
-                  <label for="employeeName" class="form-label">Nombre</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="employeeName"
-                    required />
-                </div>
-                <div class="mb-3 col-md-6">
-                  <label for="employeeLastName" class="form-label"
+                  <label for="clientLastName" class="form-label"
                     >Apellido</label
                   >
                   <input
                     type="text"
                     class="form-control"
-                    id="employeeLastName"
+                    id="clientLastName"
                     required />
                 </div>
+
                 <div class="mb-3 col-md-6">
-                  <label for="employeeDNI" class="form-label">DNI</label>
+                  <label for="clientDNI" class="form-label">DNI</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="employeeDNI"
+                    id="clientDNI"
                     required />
                 </div>
                 <div class="mb-3 col-md-6">
-                  <label for="employeeEmail" class="form-label"
+                  <label for="clientEmail" class="form-label"
                     >Correo Electrónico</label
                   >
                   <input
                     type="email"
                     class="form-control"
-                    id="employeeEmail"
+                    id="clientEmail"
                     required />
                 </div>
+
                 <div class="mb-3 col-md-6">
-                  <label for="employeeRole" class="form-label">Rol</label>
-                  <select class="form-select" id="employeeRole" required>
-                    <option value="Empleado">Empleado</option>
-                    <option value="Administrador">Administrador</option>
+                  <label for="clientHasCar" class="form-label"
+                    >¿Posee Auto?</label
+                  >
+                  <select class="form-select" id="clientHasCar" required>
+                    <option value="" selected disabled>
+                      Seleccione una opción
+                    </option>
+                    <option value="si">Sí</option>
+                    <option value="no">No</option>
                   </select>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="clientLicensePlate" class="form-label"
+                    >Patente (si aplica)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="clientLicensePlate"
+                    placeholder="Ej: ABC123" />
                 </div>
               </div>
             </form>
@@ -397,7 +290,7 @@
               Cancelar
             </button>
             <button type="button" class="btn btn-primary">
-              Guardar Empleado
+              Guardar Cliente
             </button>
           </div>
         </div>
@@ -405,5 +298,19 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hasCar = document.getElementById('clientHasCar');
+        const plate = document.getElementById('clientLicensePlate');
+
+        plate.disabled = true;
+
+        hasCar.addEventListener('change', () => {
+          plate.disabled = hasCar.value !== 'si';
+          if (plate.disabled) plate.value = '';
+        });
+      });
+    </script>
   </body>
 </html>
