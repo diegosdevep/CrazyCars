@@ -156,7 +156,6 @@
                 </tr>
               </thead>
               <tbody>
-                <!-- Usuario 1 -->
                 <tr>
                   <td>01</td>
                   <td>Juan1234</td>
@@ -175,13 +174,15 @@
                       </button>
                       <button
                         class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
+                        style="width: 48%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteEmployee">
                         <i class="bi bi-trash"></i>
                       </button>
                     </div>
                   </td>
                 </tr>
-                <!-- Usuario 2 -->
+
                 <tr>
                   <td>02</td>
                   <td>Maria1234</td>
@@ -200,13 +201,15 @@
                       </button>
                       <button
                         class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
+                        style="width: 48%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteEmployee">
                         <i class="bi bi-trash"></i>
                       </button>
                     </div>
                   </td>
                 </tr>
-                <!-- Usuario 3 -->
+
                 <tr>
                   <td>03</td>
                   <td>Pedro1234</td>
@@ -225,7 +228,9 @@
                       </button>
                       <button
                         class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
+                        style="width: 48%"
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteEmployee">
                         <i class="bi bi-trash"></i>
                       </button>
                     </div>
@@ -240,57 +245,6 @@
                   <td>Martínez</td>
                   <td>34567890</td>
                   <td>laura@example.com</td>
-                  <td>Empleado</td>
-                  <td>
-                    <div class="d-flex justify-content-between">
-                      <button
-                        class="btn btn-primary btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-pencil"></i>
-                      </button>
-                      <button
-                        class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-trash"></i>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-                <!-- Usuario 5 -->
-                <tr>
-                  <td>05</td>
-                  <td>Carlos1234</td>
-                  <td>*******</td>
-                  <td>Carlos</td>
-                  <td>Sánchez</td>
-                  <td>45678901</td>
-                  <td>carlos@example.com</td>
-                  <td>Empleado</td>
-                  <td>
-                    <div class="d-flex justify-content-between">
-                      <button
-                        class="btn btn-primary btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-pencil"></i>
-                      </button>
-                      <button
-                        class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
-                        style="width: 48%">
-                        <i class="bi bi-trash"></i>
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-
-                <!-- Usuario 10 -->
-                <tr>
-                  <td>06</td>
-                  <td>Patricia1234</td>
-                  <td>*******</td>
-                  <td>Patricia</td>
-                  <td>Jiménez</td>
-                  <td>90123456</td>
-                  <td>patricia@example.com</td>
                   <td>Empleado</td>
                   <td>
                     <div class="d-flex justify-content-between">
@@ -410,6 +364,46 @@
             </button>
             <button type="button" class="btn btn-primary">
               Guardar Empleado
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Eliminar Empleado -->
+    <div
+      class="modal fade"
+      id="confirmDeleteEmployee"
+      tabindex="-1"
+      aria-labelledby="confirmDeleteModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmDeleteModalLabel">
+              Confirmación de Eliminación
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Está seguro de que desea eliminar al Empleado?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal">
+              Eliminar
             </button>
           </div>
         </div>
