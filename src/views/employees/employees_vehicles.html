@@ -1,11 +1,983 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Dashboard - Vehículos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="../../../css/styles.css" />
+  </head>
+  <body>
+    <!-- Navbar Mobile -->
+    <nav class="navbar navbar-dark bg-dark d-md-none">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <span class="navbar-brand mb-0 h1">Empleado</span>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Sidebar Desktop-->
+        <div
+          class="col-md-3 col-lg-2 d-none d-md-block bg-dark text-white sidebar p-0 d-flex flex-column"
+          style="height: 100vh">
+          <div class="d-flex align-items-center gap-2 p-3 pb-3">
+            <i class="bi bi-person-circle fs-3"></i>
+            <div>
+              <strong>Marcos Gutierrez</strong><br />
+              <span class="badge bg-info">Empleado</span>
+            </div>
+          </div>
+          <a
+            href="./employees_dashboard.html"
+            class="text-white py-2 px-3 d-flex align-items-center">
+            <i class="bi bi-speedometer2 me-2"></i>
+            Dashboard
+          </a>
+          <a
+            href="./employees_clients.html"
+            class="text-white py-2 px-3 d-flex align-items-center">
+            <i class="bi bi-people-fill me-2"></i>
+            Clientes
+          </a>
+          <a
+            href="./employees_vehicles.html"
+            class="text-white py-2 px-3 d-flex align-items-center active">
+            <i class="bi bi-truck-front-fill me-2"></i>
+            Vehículos
+          </a>
+
+          <a href="#" class="text-white py-2 px-3 d-flex align-items-center">
+            <i class="bi bi-box-arrow-right me-2"></i>
+            <span class="small">Cerrar Sesión</span>
+          </a>
+        </div>
+
+        <!-- Sidebar Mobile -->
+        <div
+          class="offcanvas offcanvas-start d-md-none"
+          tabindex="-1"
+          id="sidebarMenu"
+          aria-labelledby="sidebarLabel">
+          <div class="offcanvas-header">
+            <div class="d-flex align-items-center gap-2 pt-3">
+              <i class="bi bi-person-circle fs-3"></i>
+              <div>
+                <strong>Marcos Gutierrez</strong><br />
+                <span class="badge bg-info">Empleado</span>
+              </div>
+            </div>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <a
+              href="./employees_dashboard.html"
+              class="text-white py-2 px-3 d-flex align-items-center">
+              <i class="bi bi-speedometer2 me-2"></i>
+              Dashboard
+            </a>
+            <a
+              href="./employees_clients.html"
+              class="text-white py-2 px-3 d-flex align-items-center">
+              <i class="bi bi-people-fill me-2"></i>
+              Clientes
+            </a>
+            <a
+              href="./employees_vehicles.html"
+              class="text-white py-2 px-3 d-flex align-items-center active">
+              <i class="bi bi-truck-front-fill me-2"></i>
+              Vehículos
+            </a>
+
+            <a
+              href="#"
+              class="text-white py-2 px-3 d-flex align-items-center mt-2">
+              <i class="bi bi-box-arrow-right me-2"></i>
+              <span class="small">Cerrar Sesión</span>
+            </a>
+          </div>
+        </div>
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
+          <!-- Header-->
+          <div class="row align-items-center mb-5" style="min-height: 170px">
+            <div class="col-md-6 d-flex flex-column justify-content-center">
+              <div>
+                <h2 class="mb-2">Panel Vehículos</h2>
+                <p class="mb-3">Bienvenido Marcos Gutierrez</p>
+                <button
+                  type="button"
+                  class="btn mb-3 text-white"
+                  style="background-color: rgba(13, 110, 253, 0.8)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#createVehicleModal">
+                  <i class="bi bi-plus-circle me-2"></i> Crear Vehículo
+                </button>
+                <button
+                  type="button"
+                  class="btn mb-3 text-white"
+                  style="background-color: rgba(23, 162, 184, 0.9)"
+                  data-bs-toggle="modal"
+                  data-bs-target="#createMaintenanceModal">
+                  <i class="bi bi-tools me-2"></i> Crear Mantenimiento
+                </button>
+              </div>
+            </div>
+
+            <div class="col-md-6 mt-2">
+              <div class="row g-2">
+                <div class="col-6">
+                  <a href="#vehiclesQuantity" class="text-decoration-none">
+                    <div
+                      class="card text-white shadow-sm rounded-4 border-0 text-center"
+                      style="
+                        height: 150px;
+                        width: 100%;
+                        background-color: rgba(13, 110, 253, 0.8);
+                      ">
+                      <div
+                        class="card-body d-flex flex-column justify-content-center align-items-center gap-2">
+                        <i class="bi bi-car-front-fill fs-4"></i>
+                        <h6
+                          class="mb-0 small text-truncate"
+                          style="max-width: 100%">
+                          Vehículos a la Venta
+                        </h6>
+                        <h5 class="fw-bold mb-0">120</h5>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="col-6">
+                  <a href="#vehiclesMaintenance" class="text-decoration-none">
+                    <div
+                      class="card text-white shadow-sm rounded-4 border-0 text-center"
+                      style="
+                        height: 150px;
+                        width: 100%;
+                        background-color: rgba(23, 162, 184, 0.9);
+                      ">
+                      <div
+                        class="card-body d-flex flex-column justify-content-center align-items-center gap-2">
+                        <i class="bi bi-tools fs-4"></i>
+                        <h6
+                          class="mb-0 small text-truncate"
+                          style="max-width: 100%">
+                          En Mantenimiento
+                        </h6>
+                        <h5 class="fw-bold mb-0">18</h5>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla Vehiculos en Venta -->
+          <div
+            class="d-flex justify-content-between align-items-center mb-3 mt-5 flex-column flex-sm-row">
+            <h4 class="text-center text-sm-start w-100">Vehículos en Venta</h4>
+
+            <div
+              class="d-flex gap-2 w-100 justify-content-center justify-content-sm-end mt-3 mt-sm-0">
+              <div class="input-group w-auto">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Buscar Vehículo"
+                  aria-label="Buscar Vehículo"
+                  aria-describedby="search-addon" />
+                <span class="input-group-text" id="search-addon"
+                  ><i class="bi bi-search"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabla de Vehículos en Venta -->
+          <div class="table-responsive mb-5">
+            <table
+              id="vehiclesQuantity"
+              class="table table-striped table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Patente</th>
+                  <th>Stock</th>
+                  <th>Precio</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Tipo</th>
+                  <th>Color</th>
+                  <th>Año</th>
+                  <th>Combustible</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>001</td>
+                  <td>ABC123</td>
+                  <td>5</td>
+                  <td>$25,000</td>
+                  <td>Ford</td>
+                  <td>Focus</td>
+                  <td>SUV</td>
+                  <td>Rojo</td>
+                  <td>2022</td>
+                  <td>Gasolina</td>
+                  <td>
+                    <div class="d-flex justify-content-between gap-1">
+                      <button
+                        class="btn text-white btn-sm w-100"
+                        style="background-color: rgba(13, 110, 253, 0.8)"
+                        data-bs-toggle="modal"
+                        data-bs-target="#vehicleSellDetailModal"
+                        title="Ver detalles">
+                        <i class="bi bi-eye"></i>
+                      </button>
+                      <button
+                        class="btn text-white btn-sm w-100"
+                        style="background-color: rgba(23, 162, 184, 0.9)">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-secondary btn-sm w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteVehicle">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Tabla Vehiculos en Mantenimiento -->
+          <div
+            class="d-flex justify-content-between align-items-center mb-3 mt-5 flex-column flex-sm-row">
+            <h4 class="text-center text-sm-start w-100">
+              Vehículos en Mantenimiento
+            </h4>
+
+            <div
+              class="d-flex gap-2 w-100 justify-content-center justify-content-sm-end mt-3 mt-sm-0">
+              <div class="input-group w-auto">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Buscar Mantenimiento"
+                  aria-label="Buscar Mantenimiento"
+                  aria-describedby="search-addon" />
+                <span class="input-group-text" id="search-addon"
+                  ><i class="bi bi-search"></i
+                ></span>
+              </div>
+            </div>
+          </div>
+          <div class="table-responsive mb-5">
+            <table
+              id="vehiclesMaintenance"
+              class="table table-striped table-bordered">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Patente</th>
+                  <th>Marca</th>
+                  <th>Modelo</th>
+                  <th>Tipo</th>
+                  <th>Color</th>
+                  <th>Año</th>
+                  <th>Motivo de Mantenimiento</th>
+                  <th>Fecha de Inicio</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>002</td>
+                  <td>XYZ456</td>
+                  <td>Toyota</td>
+                  <td>Camry</td>
+                  <td>Sedan</td>
+                  <td>Negro</td>
+                  <td>2021</td>
+                  <td>Cambio de motor</td>
+                  <td>2025-04-15</td>
+                  <td>
+                    <span class="badge bg-danger text-white">Pendiente</span>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-content-between gap-1">
+                      <button
+                        class="btn text-white btn-sm w-100"
+                        style="background-color: rgba(13, 110, 253, 0.8)"
+                        title="Ver detalles"
+                        data-bs-toggle="modal"
+                        data-bs-target="#vehicleDetailMaintenance">
+                        <i class="bi bi-eye"></i>
+                      </button>
+                      <button
+                        class="btn text-white btn-sm w-100"
+                        style="background-color: rgba(23, 162, 184, 0.9)">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-secondary btn-sm w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteMaintenance">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>003</td>
+                  <td>DEF789</td>
+                  <td>Ford</td>
+                  <td>Mustang</td>
+                  <td>Deportivo</td>
+                  <td>Rojo</td>
+                  <td>2020</td>
+                  <td>Reemplazo de suspensión</td>
+                  <td>2025-04-17</td>
+                  <td>
+                    <span class="badge bg-success">Completado</span>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-content-between gap-1">
+                      <button
+                        class="btn text-white btn-sm w-100"
+                        style="background-color: rgba(13, 110, 253, 0.8)"
+                        title="Ver detalles"
+                        data-bs-toggle="modal"
+                        data-bs-target="#vehicleDetailMaintenance">
+                        <i class="bi bi-eye"></i>
+                      </button>
+
+                      <button
+                        class="btn text-white btn-sm w-100"
+                        style="background-color: rgba(23, 162, 184, 0.9)">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-secondary btn-sm w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteMaintenance">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>004</td>
+                  <td>LMN123</td>
+                  <td>Honda</td>
+                  <td>Civic</td>
+                  <td>Sedan</td>
+                  <td>Azul</td>
+                  <td>2022</td>
+                  <td>Revisión general</td>
+                  <td>2025-04-18</td>
+                  <td>
+                    <span class="badge bg-warning text-white">En Proceso</span>
+                  </td>
+                  <td>
+                    <div class="d-flex justify-content-between gap-1">
+                      <button
+                        class="btn text-white btn-sm w-100"
+                        style="background-color: rgba(13, 110, 253, 0.8)"
+                        title="Ver detalles"
+                        data-bs-toggle="modal"
+                        data-bs-target="#vehicleDetailMaintenance">
+                        <i class="bi bi-eye"></i>
+                      </button>
+
+                      <button
+                        class="btn text-white btn-sm w-100"
+                        style="background-color: rgba(23, 162, 184, 0.9)">
+                        <i class="bi bi-pencil"></i>
+                      </button>
+                      <button
+                        class="btn btn-secondary btn-sm w-100"
+                        data-bs-toggle="modal"
+                        data-bs-target="#confirmDeleteMaintenance">
+                        <i class="bi bi-trash"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Modal Crear Vehiculo -->
+    <div
+      class="modal fade"
+      id="createVehicleModal"
+      tabindex="-1"
+      aria-labelledby="createVehicleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="createVehicleModalLabel">
+              Crear Vehiculo
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleLicensePlate" class="form-label"
+                    >Patente (Si Aplica)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="vehiclePatente"
+                    required />
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleStock" class="form-label">Stock</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="vehicleStock"
+                    min="0"
+                    max="200"
+                    required />
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehiclePrice" class="form-label">Precio</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="vehiclePrice"
+                    min="0"
+                    max="1000000"
+                    required />
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleBrand" class="form-label">Marca</label>
+                  <select class="form-select" id="vehicleBrand" required>
+                    <option value="" disabled selected>
+                      Seleccione una marca
+                    </option>
+
+                    <option value="toyota">Toyota</option>
+                    <option value="ford">Ford</option>
+                    <option value="chevrolet">Chevrolet</option>
+                    <option value="honda">Honda</option>
+                    <option value="bmw">BMW</option>
+                    <option value="nissan">Nissan</option>
+                    <option value="volkswagen">Volkswagen</option>
+                  </select>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleModel" class="form-label">Modelo</label>
+                  <select class="form-select" id="vehicleModel" required>
+                    <option value="" disabled selected>
+                      Seleccione un modelo
+                    </option>
+                    <option value="Corolla">Toyota Corolla</option>
+                    <option value="Civic">Honda Civic</option>
+                    <option value="Focus">Ford Focus</option>
+                    <option value="Cruze">Chevrolet Cruze</option>
+                    <option value="Jetta">Volkswagen Jetta</option>
+                    <option value="F-150">Ford F-150</option>
+                    <option value="X5">BMW X5</option>
+                  </select>
+                </div>
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleType" class="form-label">Tipo</label>
+                  <select class="form-select" id="vehicleType" required>
+                    <option value="" disabled selected>
+                      Seleccione un tipo
+                    </option>
+                    <option value="Sedan">Sedán</option>
+                    <option value="SUV">SUV</option>
+                    <option value="Pickup">Pickup</option>
+                  </select>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleColor" class="form-label">Color</label>
+                  <select class="form-select" id="vehicleColor" required>
+                    <option value="" disabled selected>
+                      Seleccione un color
+                    </option>
+                    <option value="Rojo">Rojo</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Negro">Negro</option>
+                    <option value="Blanco">Blanco</option>
+                    <option value="Gris">Gris</option>
+                    <option value="Plateado">Plateado</option>
+                    <option value="Verde">Verde</option>
+                    <option value="Amarillo">Amarillo</option>
+                    <option value="Naranja">Naranja</option>
+                  </select>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleYear" class="form-label">Año</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="vehicleYear"
+                    aria-label="Año del vehiculo"
+                    min="1990"
+                    max="2025"
+                    required
+                    placeholder="Ingresa el año de fabricacion" />
+                  <div class="invalid-feedback">
+                    Por favor, ingrese un año valido entre 1990 y el año actual.
+                  </div>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehicleFuel" class="form-label"
+                    >Tipo de Combustible</label
+                  >
+                  <select class="form-select" id="vehicleFuel" required>
+                    <option value="" disabled selected>
+                      Seleccione un tipo de combustible
+                    </option>
+
+                    <!-- Cambiar Values -->
+                    <!-- Cambiar Values -->
+                    <!-- Cambiar Values -->
+                    <!-- Cambiar Values -->
+                    <!-- Cambiar Values -->
+                    <option value="Gasolina">Nafta</option>
+                    <option value="Diesel">Diesel</option>
+                    <option value="Electrico">Electrico</option>
+                  </select>
+                </div>
+
+                <div class="mb-3 col-md-6">
+                  <label for="vehiclePhoto" class="form-label"
+                    >Foto del Vehiculo</label
+                  >
+                  <input
+                    type="file"
+                    class="form-control"
+                    id="vehiclePhoto"
+                    accept="image/*"
+                    required />
+                  <div class="form-text">
+                    Formatos aceptados: JPG, PNG, WEBP. Tamaño máximo
+                    recomendado: 5MB.
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Guardar Vehiculo
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Crear Mantenimiento -->
+    <div
+      class="modal fade"
+      id="createMaintenanceModal"
+      tabindex="-1"
+      aria-labelledby="createMaintenanceModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content rounded-4 shadow-lg">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title" id="createMaintenanceModalLabel">
+              Crear Mantenimiento
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <form id="createMaintenanceForm">
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="mantainceVehicleLicensePlate" class="form-label"
+                    >Patente</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="mantainceVehicleLicensePlate"
+                    required />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="maintenanceDate" class="form-label"
+                    >Fecha de Mantenimiento</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="maintenanceDate"
+                    required />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-12 mb-3">
+                  <label for="maintenanceDescription" class="form-label"
+                    >Descripción del Mantenimiento</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="maintenanceDescription"
+                    rows="4"
+                    placeholder="Ingrese detalles del mantenimiento..."
+                    required></textarea>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="maintenanceType" class="form-label"
+                    >Tipo de Mantenimiento</label
+                  >
+                  <select class="form-select" id="maintenanceType" required>
+                    <option value="" disabled selected>
+                      Seleccione tipo de mantenimiento
+                    </option>
+                    <!-- CAMBIAR VALUE DE LAS OPCIONES -->
+                    <!-- CAMBIAR VALUE DE LAS OPCIONES -->
+                    <!-- CAMBIAR VALUE DE LAS OPCIONES -->
+                    <option value="Cambio de Aceite">Cambio de Aceite</option>
+                    <option value="Revisión General">Revisión General</option>
+                    <option value="Cambio de Frenos">Cambio de Frenos</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="maintenanceStatus" class="form-label"
+                    >Estado</label
+                  >
+                  <select class="form-select" id="maintenanceStatus" required>
+                    <option value="" disabled selected>
+                      Seleccione el estado
+                    </option>
+                    <option value="Pendiente">Pendiente</option>
+                    <option value="En Proceso">En Proceso</option>
+                    <option value="Completado">Completado</option>
+                  </select>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer bg-light">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cerrar
+            </button>
+            <button
+              type="submit"
+              class="btn btn-success"
+              form="createMaintenanceForm">
+              Crear Mantenimiento
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Detalles del Vehiculo En Venta-->
+    <div
+      class="modal fade"
+      id="vehicleSellDetailModal"
+      tabindex="-1"
+      aria-labelledby="vehicleSellDetailModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content rounded-4 shadow-lg">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title" id="vehicleSellDetailModalLabel">
+              Detalles del Vehículo
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-5 text-center mb-3 mb-md-0">
+                <div
+                  class="border rounded p-2"
+                  style="
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  ">
+                  <img
+                    src="../../../images/auto2.png"
+                    alt="Imagen del Vehículo"
+                    class="img-fluid rounded w-100 h-100 object-fit-cover" />
+                </div>
+              </div>
+
+              <div class="col-md-7">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <strong>Patente:</strong> ABC123
+                  </li>
+                  <li class="list-group-item"><strong>Stock:</strong> 20</li>
+                  <li class="list-group-item">
+                    <strong>Precio:</strong> $25,000
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Marca:</strong> Toyota
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Modelo:</strong> Corolla
+                  </li>
+                  <li class="list-group-item"><strong>Tipo:</strong> Sedan</li>
+                  <li class="list-group-item">
+                    <strong>Color:</strong> Gris Plata
+                  </li>
+                  <li class="list-group-item"><strong>Año:</strong> 2020</li>
+                  <li class="list-group-item">
+                    <strong>Tipo de Combustible:</strong> Nafta
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal Detalles del Vehiculo en Mantenimiento-->
+    <div
+      class="modal fade"
+      id="vehicleDetailMaintenance"
+      tabindex="-1"
+      aria-labelledby="vehicleDetailModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content rounded-4 shadow-lg">
+          <div class="modal-header bg-dark text-white">
+            <h5 class="modal-title" id="vehicleDetailModalLabel">
+              Detalles del Vehículo
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-5 text-center mb-3 mb-md-0">
+                <div
+                  class="border rounded p-2"
+                  style="
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  ">
+                  <img
+                    src="../../../images/auto2.png"
+                    alt="Imagen del Vehiculo"
+                    class="img-fluid rounded w-100 h-100 object-fit-cover" />
+                </div>
+              </div>
+
+              <div class="col-md-7">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">
+                    <strong>Patente:</strong>
+                    <span id="licensePlate">ABC123</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Marca:</strong> <span id="brand">Toyota</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Modelo:</strong> <span id="model">Corolla</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Año:</strong> <span id="year">2020</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Tipo:</strong> <span id="type">Sedan</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Color:</strong> <span id="color">Gris Plata</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Tipo de Combustible:</strong>
+                    <span id="fuel">Nafta</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Propietario:</strong>
+                    <span id="owner">Juan Perez</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Fecha de Venta:</strong>
+                    <span id="sellDate">24/12/2025</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Fecha de Mantenimiento:</strong>
+                    <span id="maintenanceDate">30/12/2025</span>
+                  </li>
+                  <li class="list-group-item">
+                    <strong>Lo que se está arreglando:</strong>
+                    <span id="maintenanceType">Cambio de frenos y aceite</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer bg-light">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Eliminar Vehicle -->
+    <div
+      class="modal fade"
+      id="confirmDeleteVehicle"
+      tabindex="-1"
+      aria-labelledby="confirmDeleteModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmDeleteModalLabel">
+              Confirmación de Eliminación
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Está seguro de que desea eliminar este Vehiculo?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal">
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Eliminar Maintenance -->
+    <div
+      class="modal fade"
+      id="confirmDeleteMaintenance"
+      tabindex="-1"
+      aria-labelledby="confirmDeleteModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmDeleteModalLabel">
+              Confirmación de Eliminación
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ¿Está seguro de que desea eliminar este Mantenimiento?
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              data-bs-dismiss="modal">
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

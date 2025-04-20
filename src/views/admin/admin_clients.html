@@ -108,7 +108,7 @@
                         <h6
                           class="mb-0 small text-truncate"
                           style="max-width: 100%">
-                          Cantidad de Usuarios
+                          Cantidad de Clientes
                         </h6>
                         <h5 class="fw-bold mb-0">250</h5>
                       </div>
@@ -259,22 +259,28 @@
               <thead class="table-dark">
                 <tr>
                   <th>Cliente</th>
-                  <th>Email</th>
                   <th>T. Consulta</th>
                   <th>Estado</th>
                   <th>Fecha</th>
                   <th>Patente</th>
+                  <th>Asignada</th>
                   <th>Acciones</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Juan Pérez</td>
-                  <td>juan.perez@example.com</td>
                   <td>Mantenimiento</td>
-                  <td>En proceso</td>
+                  <td>
+                    <span class="badge bg-warning text-white">En proceso</span>
+                  </td>
                   <td>04-18-25</td>
                   <td>ABC123</td>
+                  <td>
+                    <span class="badge bg-secondary text-white"
+                      >L.Gonzales</span
+                    >
+                  </td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <button
@@ -297,10 +303,10 @@
                 </tr>
                 <tr>
                   <td>María López</td>
-                  <td>maria.lopez@example.com</td>
                   <td>Compra</td>
-                  <td>Nuevo</td>
+                  <td><span class="badge bg-danger text-white">Nueva</span></td>
                   <td>04-19-25</td>
+                  <td>-</td>
                   <td>-</td>
                   <td>
                     <div class="d-flex justify-content-between">
@@ -324,11 +330,17 @@
                 </tr>
                 <tr>
                   <td>Ricardo Gómez</td>
-                  <td>ricardo.gomez@example.com</td>
                   <td>Cita</td>
-                  <td>Finalizada</td>
+                  <td>
+                    <span class="badge bg-success text-white">Finalizada</span>
+                  </td>
                   <td>04-17-25</td>
                   <td>DEF456</td>
+                  <td>
+                    <span class="badge bg-secondary text-white"
+                      >M.Gutierrez</span
+                    >
+                  </td>
                   <td>
                     <div class="d-flex justify-content-between">
                       <button
