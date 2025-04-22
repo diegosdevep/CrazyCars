@@ -49,3 +49,19 @@ body {
 .table td {
   vertical-align: middle;
 }
+
+.form-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  border-left: 1px solid #dee2e6;
+}

@@ -14,29 +14,15 @@
   </head>
 
   <body>
-    <div class="login-content">
-      <h1 class="login-title">Inicia Sesión</h1>
-      <form method="post" action="./login.php">
-        <input
-          type="text"
-          name="usuario"
-          maxlength="40"
-          required
-          placeholder="Ingrese Usuario"
-          class="login-form-input" /><br />
-        <input
-          type="password"
-          name="contra"
-          minlength="5"
-          maxlength="30"
-          required
-          placeholder="Ingrese Contraseña"
-          class="login-form-input" /><br />
-        <input type="submit" value="Iniciar Sesión" class="login-form-button" />
-      </form>
-      <a href="./src/views/admin/admin_dashboard.html" class="login-form-link"
-        >Admin</a
+    <h1 class="login-title">Inicia Sesión</h1>
+    <form>
+      <a
+        href="./src/views/auth/login.html"
+        type="submit"
+        value="Loguearme"
+        class="login-form-button"
+        >Loguearme</a
       >
-    </div>
+    </form>
   </body>
 </html>
