@@ -55,8 +55,13 @@
           <label class="form-check-label" for="rememberMe">Recuérdame</label>
         </div>
 
+        <!-- Botón para abrir el modal -->
         <div class="mb-3">
-          <button type="submit" class="btn btn-danger w-100">
+          <button
+            type="button"
+            class="btn btn-danger w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#roleModal">
             Iniciar Sesion
           </button>
         </div>
@@ -87,6 +92,43 @@
             border-top-right-radius: 1rem;
             border-bottom-right-radius: 1rem;
           " />
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="roleModal"
+      tabindex="-1"
+      aria-labelledby="roleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="roleModalLabel">Selecciona tu rol</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="d-flex justify-content-center gap-3">
+              <a href="../user/user_profile.html" class="btn btn-primary"
+                >Cliente</a
+              >
+              <a
+                href="../employees/employees_dashboard.html"
+                class="btn text-white"
+                style="background-color: rgba(23, 162, 184, 0.8)"
+                >Empleado</a
+              >
+              <a href="../admin/admin_dashboard.html" class="btn btn-success"
+                >Administrador</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>
