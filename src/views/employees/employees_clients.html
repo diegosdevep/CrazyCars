@@ -59,7 +59,11 @@
             <i class="bi bi-truck-front-fill me-2"></i>
             Vehículos
           </a>
-          <a href="#" class="text-white py-2 px-3 d-flex align-items-center">
+          <a
+            href="#"
+            class="text-white py-2 px-3 d-flex align-items-center"
+            data-bs-toggle="modal"
+            data-bs-target="#logoutModal">
             <i class="bi bi-box-arrow-right me-2"></i>
             <span class="small">Cerrar Sesión</span>
           </a>
@@ -867,6 +871,39 @@
               data-bs-dismiss="modal">
               Eliminar
             </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de confirmación para cerrar sesión -->
+    <div
+      class="modal fade"
+      id="logoutModal"
+      tabindex="-1"
+      aria-labelledby="logoutModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoutModalLabel">
+              Confirmar cierre de sesión
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"></button>
+          </div>
+          <div class="modal-body">¿Está seguro que desea cerrar sesión?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Cancelar
+            </button>
+            <a href="login.html" class="btn btn-danger">Cerrar Sesión</a>
           </div>
         </div>
       </div>
