@@ -1,69 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container mt-3 bg-light vh-100">
-        <h1 class="text-primary mt-3">Editar perfil</h1>
-          <hr>
-        <div class="row">
-          <!-- left column -->
-          <div class="col-md-3">
-            <div class="text-center">
-              <img src="/assets/istockphoto-1451587807-612x612.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
-              <h6>Carga una imagen para tu perfil.</h6>
-              
-              <input type="file" class="form-control">
-            </div>
+      <h1 class="text-primary mt-3">Editar perfil</h1>
+      <hr />
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-3">
+          <div class="text-center">
+            <img
+              src="../../../assets/istockphoto-1451587807-612x612.jpg"
+              class="avatar img-circle img-thumbnail"
+              alt="avatar" />
+            <h6>Carga una imagen para tu perfil.</h6>
+
+            <input type="file" class="form-control" />
           </div>
-          
-          <!-- edit form column -->
-          <div class="col-md-9 personal-info">
-            <div class="alert alert-info alert-dismissable">
-              <a class="panel-close close" data-dismiss="alert">×</a> 
-              <i class="fa fa-coffee"></i>
-              No te olvides de apretar el boton de guardado despues de realizar todos los cambios
-            </div>
-            <h3>Personal info</h3>
-            
-            <form class="form-horizontal" role="form">
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Nombre completo</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" value="Juan del pozo">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Contrasenia:</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" value="*********">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Telefono</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" value="(320) 380-4539">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="col-lg-3 control-label">Email:</label>
-                <div class="col-lg-8">
-                  <input class="form-control" type="text" value="delpo@gmail.com">
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="col-lg-8">
-                  <button class="btn btn-primary mt-3" type="button">Guardar cambios</button>
-                </div>
-              </div>
-            </form>
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+          <div class="alert alert-info alert-dismissable">
+            <a class="panel-close close" data-dismiss="alert">×</a>
+            <i class="fa fa-coffee"></i>
+            No te olvides de apretar el boton de guardado despues de realizar
+            todos los cambios
           </div>
+          <h3>Personal info</h3>
+
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Nombre completo</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" value="Juan del pozo" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Contrasenia:</label>
+              <div class="col-lg-8">
+                <input class="form-control" type="text" value="*********" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Telefono</label>
+              <div class="col-lg-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  value="(320) 380-4539" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Email:</label>
+              <div class="col-lg-8">
+                <input
+                  class="form-control"
+                  type="text"
+                  value="delpo@gmail.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-lg-8">
+                <button class="btn btn-primary mt-3" type="button">
+                  Guardar cambios
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
-    <hr>
-</body>
+    <hr />
+  </body>
 </html>
