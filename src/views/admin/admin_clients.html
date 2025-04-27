@@ -70,6 +70,60 @@
             <span class="small">Cerrar Sesión</span>
           </a>
         </div>
+        <div
+          class="offcanvas offcanvas-start d-md-none"
+          tabindex="-1"
+          id="sidebarMenu"
+          aria-labelledby="sidebarLabel">
+          <div class="offcanvas-header">
+            <div class="d-flex align-items-center gap-2 pt-3">
+              <i class="bi bi-person-circle fs-3"></i>
+              <div>
+                <strong>Diego Torres</strong><br />
+                <span class="badge bg-danger">Administrador</span>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <a
+              href="./admin_dashboard.html"
+              class="d-flex align-items-center mb-2 text-decoration-none text-white">
+              <i class="bi bi-speedometer2 me-2"></i>
+              Dashboard
+            </a>
+            <a
+              href="./admin_vehicles.html"
+              class="d-flex align-items-center mb-2 text-decoration-none text-white">
+              <i class="bi bi-truck-front-fill me-2"></i>
+              Vehículos
+            </a>
+            <a
+              href="./admin_clients.html"
+              class="d-flex align-items-center mb-2 text-decoration-none text-white">
+              <i class="bi bi-people-fill me-2"></i>
+              Clientes
+            </a>
+            <a
+              href="./admin_employees.html"
+              class="d-flex align-items-center mb-2 text-decoration-none text-white">
+              <i class="bi bi-person-badge-fill me-2"></i>
+              Empleados
+            </a>
+
+            <a
+              href="#"
+              class="text-white py-2 px-3 d-flex align-items-center mt-2">
+              <i class="bi bi-box-arrow-right me-2"></i>
+              <span class="small">Cerrar Sesión</span>
+            </a>
+          </div>
+        </div>
 
         <!-- Main content -->
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 py-4">
@@ -563,7 +617,7 @@
       </div>
     </div>
 
-    <!-- Modal Detalle Vehículo -->
+    <!-- Modal Detalle Vehiculo -->
     <div
       class="modal fade"
       id="vehicleDetailModal"
@@ -584,7 +638,6 @@
           </div>
           <div class="modal-body">
             <div class="row">
-              <!-- Imagen del Vehículo -->
               <div class="col-md-5 text-center mb-3 mb-md-0">
                 <div
                   class="border rounded p-2"
