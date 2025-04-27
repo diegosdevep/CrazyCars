@@ -12,91 +12,84 @@
   </head>
 
   <body
-    class="bg-secondary d-flex justify-content-center align-items-center vh-100">
-    <!-- Contenedor principal -->
+    class="bg-secondary d-flex justify-content-center align-items-center min-vh-100 p-3">
     <div
-      class="d-flex justify-content-center align-items-center gap-3 bg-white rounded shadow text-secondary">
-      <!-- Formulario -->
-      <div class="col-lg-6 p-5">
-        <div class="text-center fs-1 fw-bold mb-2 text-secondary">
-          Iniciar Sesion
+      class="container-fluid bg-white rounded shadow text-secondary overflow-hidden"
+      style="max-width: 1000px">
+      <div class="row">
+        <div class="col-lg-6 order-lg-2 order-1 p-0">
+          <img
+            class="img-fluid w-100 h-100 object-fit-cover"
+            src="../../../assets/logo.webp.png"
+            alt="imagen-form"
+            style="min-height: 300px; max-height: 500px" />
         </div>
 
-        <div class="input-group">
-          <div class="input-group-text bg-danger border-1 mb-2">
-            <img
-              src="../../../assets/username-icon.svg"
-              alt="img-input"
-              style="height: 1rem" />
-          </div>
-          <input
-            type="text"
-            placeholder="Nombre de Usuario"
-            class="form-control mb-2" />
-        </div>
-
-        <div class="input-group">
-          <div class="input-group-text bg-danger mb-2">
-            <img
-              src="../../../assets/password-icon.svg"
-              alt="password-input"
-              style="height: 1rem" />
-          </div>
-          <input
-            type="password"
-            placeholder="Contraseña"
-            class="form-control mb-2" />
-        </div>
-
-        <div class="form-check mb-3">
-          <input
-            class="form-check-input bg-secondary"
-            type="checkbox"
-            id="rememberMe" />
-          <label class="form-check-label" for="rememberMe">Recuérdame</label>
-        </div>
-
-        <!-- Botón para abrir el modal -->
-        <div class="mb-3">
-          <button
-            type="button"
-            class="btn btn-danger w-100"
-            data-bs-toggle="modal"
-            data-bs-target="#roleModal">
+        <div class="col-lg-6 order-lg-1 order-2 p-4 p-lg-5">
+          <div class="text-center fs-1 fw-bold mb-2 text-secondary">
             Iniciar Sesion
-          </button>
-        </div>
+          </div>
 
-        <div class="text-center">
-          <p class="mb-1 small">
-            ¿No tienes una cuenta?
-            <span>
-              <a
-                href="./register.html"
-                class="text-decoration-none text-dark fw-semibold small"
-                >Register</a
-              >
-            </span>
-          </p>
-        </div>
-      </div>
+          <div class="input-group">
+            <div class="input-group-text bg-danger border-1 mb-2">
+              <img
+                src="../../../assets/username-icon.svg"
+                alt="img-input"
+                style="height: 1rem" />
+            </div>
+            <input
+              type="text"
+              placeholder="Nombre de Usuario"
+              class="form-control mb-2" />
+          </div>
 
-      <!-- Imagen -->
-      <div class="col-lg-6">
-        <img
-          class="shadow text-secondary img-fluid object-fit-cover"
-          src="../../../assets/logo.webp.png"
-          alt="imagen-form"
-          style="
-            height: 30rem;
-            width: 28rem;
-            border-top-right-radius: 1rem;
-            border-bottom-right-radius: 1rem;
-          " />
+          <div class="input-group">
+            <div class="input-group-text bg-danger mb-2">
+              <img
+                src="../../../assets/password-icon.svg"
+                alt="password-input"
+                style="height: 1rem" />
+            </div>
+            <input
+              type="password"
+              placeholder="Contraseña"
+              class="form-control mb-2" />
+          </div>
+
+          <div class="form-check mb-3">
+            <input
+              class="form-check-input bg-secondary"
+              type="checkbox"
+              id="rememberMe" />
+            <label class="form-check-label" for="rememberMe">Recuérdame</label>
+          </div>
+
+          <div class="mb-3">
+            <button
+              type="button"
+              class="btn btn-danger w-100"
+              data-bs-toggle="modal"
+              data-bs-target="#roleModal">
+              Iniciar Sesion
+            </button>
+          </div>
+
+          <div class="text-center">
+            <p class="mb-1 small">
+              ¿No tienes una cuenta?
+              <span>
+                <a
+                  href="./register.html"
+                  class="text-decoration-none text-dark fw-semibold small"
+                  >Register</a
+                >
+              </span>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <!-- Modal -->
     <div
       class="modal fade"
       id="roleModal"
